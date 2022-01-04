@@ -54,7 +54,7 @@ class get_the_data(wx.Frame):
             result = obj.finditer(response)
             for nam in result:
                 data = "IP地址是:"  + nam.group("ip") +  '\n' + 'IP归属地:' +  nam.group("yys")  + 'IP运营商:' +  nam.group("sjs")
-                datalog = '-------------------------------\n' + nam.group("ip") +'\n' + nam.group("yys") + nam.group("sjs") +'-------------------------------'
+                datalog = '-------------------------------\n' + proxy_ip +'\n' + nam.group("yys") + nam.group("sjs") +'-------------------------------'
                 self.output_txt_input.SetValue(data)
                 file_handle = open('./access.log', mode='a')
                 file_handle.write(datalog)
